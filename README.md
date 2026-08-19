@@ -64,25 +64,57 @@ Source: [`plugins/ask-techsoup/skills/ask-techsoup/SKILL.md`](plugins/ask-techso
 
 ## Claude Desktop / claude.ai
 
-Custom Skills there are uploaded per-person as a zip — there's no org-wide
-install yet, so each person repeats these steps:
+Skills are added per-person — there's no org-wide install yet, so each person
+repeats these steps. This skill is a single file (`SKILL.md`), so on the
+Claude Desktop app you don't need to zip anything.
 
-1. Settings → Capabilities → turn on **"Code execution and file creation"**
-   (on by default for Team/Enterprise; required on Free/Pro/Max). Also enable
-   network access for code execution — the skill needs it to reach
-   `offercenter.techsoup.org`.
-2. Download the [`claude-ai/ask-techsoup/`](claude-ai/ask-techsoup/) folder
-   from this repo.
-3. Zip it so the `ask-techsoup/` folder is the **root of the zip** (not a
-   loose `SKILL.md`, not double-wrapped):
-   ```
-   cd claude-ai && zip -r ask-techsoup.zip ask-techsoup
-   ```
-4. Settings → Features → **Skills** → **+** → **Create skill** → upload
+### Recommended: Claude Desktop app
+
+1. **Turn on network access** — the skill needs this to reach
+   `offercenter.techsoup.org` for live pricing/eligibility: **Settings →
+   Capabilities** → turn on **"Code execution and file creation"** → also
+   turn on **network access** for code execution. If this is greyed out,
+   your workspace admin controls it — ask them to enable network access for
+   code execution. (If Claude ever replies that it can't reach the catalog,
+   this is almost always the cause — see "If it doesn't work" below.)
+2. **Download the skill file:** open
+   [`claude-ai/ask-techsoup/SKILL.md`](claude-ai/ask-techsoup/SKILL.md) on
+   GitHub, then click the **download icon** at the top right of the file
+   view (next to "Raw") to save `SKILL.md` to your computer. Don't use
+   "Download ZIP" from the repo's main page — that downloads the whole repo,
+   which you don't need.
+3. In Claude Desktop, open the left sidebar → **Customize** → add a skill by
+   uploading the `SKILL.md` file you just downloaded.
+4. Don't see "Customize" in your sidebar? Claude is still rolling this
+   feature out — use the fallback method below instead.
+
+### Fallback: upload a zip file (claude.ai in a browser, or no "Customize" yet)
+
+1. Go to the [repo's main page](https://github.com/TechSoup/ask-techsoup),
+   click the green **`<> Code`** button → **Download ZIP**. This saves
+   `ask-techsoup-main.zip` to your Downloads folder.
+2. Unzip it:
+   - **Mac:** double-click `ask-techsoup-main.zip`.
+   - **Windows:** right-click it → **Extract All** → **Extract**.
+3. Open the extracted `ask-techsoup-main` folder → open `claude-ai` → find
+   the `ask-techsoup` folder. Select it, but don't open it.
+4. Compress just that folder:
+   - **Mac:** right-click `ask-techsoup` → **Compress "ask-techsoup"** →
+     this creates `ask-techsoup.zip` next to it.
+   - **Windows:** right-click `ask-techsoup` → **Send to** → **Compressed
+     (zipped) folder** → this creates `ask-techsoup.zip` next to it.
+5. In Claude: **Settings → Features → Skills → + → Create skill** → upload
    `ask-techsoup.zip`.
+6. Turn on network access as described in step 1 above.
 
-Use it by just asking Claude a question about TechSoup offers — no slash
-command, it triggers automatically when relevant.
+### Using it
+
+Just ask Claude a question about TechSoup offers — no slash command, it
+triggers automatically when relevant.
+
+**If it doesn't work:** if Claude replies that it can't reach the TechSoup
+catalog, network access for code execution is almost certainly off — see
+step 1 above, or ask your workspace admin to enable it org-wide.
 
 Source: [`claude-ai/ask-techsoup/SKILL.md`](claude-ai/ask-techsoup/SKILL.md)
 
@@ -175,8 +207,11 @@ Action instead of running `curl`) — update it by hand to match whenever
 ## Updating
 
 - **Claude Code** users: run `/plugin marketplace update` after a push.
-- **Claude Desktop / claude.ai, Gemini CLI, Antigravity, Codex CLI** users:
-  re-download the relevant folder and replace your local copy (there's no
-  auto-update for these surfaces).
+- **Claude Desktop / claude.ai** users: re-download `SKILL.md` (Customize
+  method) or re-zip and re-upload (fallback method), then remove the old
+  version of the skill before adding the new one.
+- **Gemini CLI, Antigravity, Codex CLI** users: re-download the relevant
+  folder and replace your local copy (there's no auto-update for these
+  surfaces).
 - **ChatGPT** users: re-copy `chatgpt/instructions.md` into the GPT's
   Instructions box and save.

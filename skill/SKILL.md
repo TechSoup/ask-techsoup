@@ -41,6 +41,16 @@ Save it to a scratch file and parse with `jq` or Python rather than re-fetching
 for every follow-up question within the same exchange — the catalog doesn't
 change mid-conversation.
 
+**If the fetch fails** (connection error, timeout, DNS failure, or an empty/
+non-JSON response) — do not fall back to answering from memory or guessing.
+Tell the user plainly that the live TechSoup catalog can't be reached right
+now, and that this is almost always caused by network access for code
+execution being turned off: point them to **Settings → Capabilities →
+"Code execution and file creation" → enable network access**. If they
+already have that on, the block is likely set by their workspace admin, who
+can enable network access for code execution org-wide. Do not answer the
+original question until a fetch succeeds.
+
 ## 2. Schema reference
 
 Top level is `{ meta, products }`.
