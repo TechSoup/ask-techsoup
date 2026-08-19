@@ -11,19 +11,19 @@ description: >-
   something, or wants to compare offers. Always queries the live feed rather
   than answering from memory, since prices, discount tiers, and eligibility
   change.
-argument-hint: <question about TechSoup nonprofit tech offers>
 ---
+
+<!-- GENERATED FILE — do not edit directly. Source: skill/SKILL.md. Regenerate with scripts/sync-skills.sh -->
 
 # Ask TechSoup
 
-Invoked as `/ask-techsoup <question>`. Answers questions about technology
-discounts and donations available to nonprofits worldwide — a catalog of
-third-party vendor offers that TechSoup vets and maintains (distinct from
-TechSoup's own technology offerings) — by querying the **live, canonical data
-feed** — never answer from training data. Offer pricing, discount tiers, and
-eligibility rules (including which countries an offer is open to) change over
-time, and a stale or invented answer about a discount is actively harmful to
-a nonprofit relying on it.
+Answers questions about technology discounts and donations available to
+nonprofits worldwide — a catalog of third-party vendor offers that TechSoup
+vets and maintains (distinct from TechSoup's own technology offerings) — by
+querying the **live, canonical data feed** — never answer from training data.
+Offer pricing, discount tiers, and eligibility rules (including which
+countries an offer is open to) change over time, and a stale or invented
+answer about a discount is actively harmful to a nonprofit relying on it.
 
 This feed is the production output of TechSoup's VKB pipeline (Markdown
 "Intelligent Packages" → compiled `products.json` "headless API" → Offer
@@ -120,20 +120,3 @@ Each entry in `products` (~140+ items, count varies as the catalog changes):
 Default to a short table or bullet list (Product | Category | Cost | Eligible
 for | Vendor link). Scope the answer to what was asked — don't dump the full
 catalog unless the user explicitly wants to browse everything.
-
-## Installation
-
-This skill is distributed as a Claude Code plugin via a private marketplace
-repo (`TechSoup/ask-techsoup` on GitHub). In Claude Code:
-
-```
-/plugin marketplace add TechSoup/ask-techsoup
-/plugin install ask-techsoup@ask-techsoup
-```
-
-You'll need read access to the private `TechSoup/ask-techsoup` repo on GitHub
-for the marketplace add to succeed. Run `/plugin marketplace update` after a
-new push to pick up changes.
-
-> Custom skills/plugins are currently Claude Code–only; claude.ai web and
-> Claude Desktop don't yet support installing them.
