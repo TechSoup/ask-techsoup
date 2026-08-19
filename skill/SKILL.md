@@ -34,22 +34,43 @@ At the start of a session (or whenever asked about something the already-fetched
 copy might not reflect), fetch fresh:
 
 ```bash
-curl -s https://offercenter.techsoup.org/resources/data/products.json
+curl -s --max-time 8 https://offercenter.techsoup.org/resources/data/products.json
 ```
 
 Save it to a scratch file and parse with `jq` or Python rather than re-fetching
 for every follow-up question within the same exchange — the catalog doesn't
 change mid-conversation.
 
-**If the fetch fails** (connection error, timeout, DNS failure, or an empty/
-non-JSON response) — do not fall back to answering from memory or guessing.
-Tell the user plainly that the live TechSoup catalog can't be reached right
-now, and that this is almost always caused by network access for code
-execution being turned off: point them to **Settings → Capabilities →
-"Code execution and file creation" → enable network access**. If they
-already have that on, the block is likely set by their workspace admin, who
-can enable network access for code execution org-wide. Do not answer the
-original question until a fetch succeeds.
+**If the fetch fails, try once more** (a single fast retry, in case of a
+one-off blip). If it fails a second time, stop — do not retry further, do
+not fall back to web search, training data, or general knowledge of
+TechSoup's public website. This matters specifically because Offer Center's
+live catalog includes offers beyond what's listed on techsoup.org's public
+pages, so a "here's what I generally know" substitute would understate what's
+actually available — worse than saying nothing. Do not answer the original
+question until a fetch succeeds.
+
+Respond immediately (no extra tool calls, no hedged partial answer) with an
+error message:
+
+- **If the environment itself reports network access is disabled** (a
+  distinct signal, not just a generic connection failure) — say so directly
+  and specifically: network access for code execution is turned off, so you
+  can't reach the live TechSoup catalog; enable it under **Settings →
+  Capabilities → "Code execution and file creation"**, or ask your workspace
+  admin if it's controlled org-wide.
+- **Otherwise** (timeout, connection refused, DNS failure, error status, or
+  an empty/invalid response — i.e. the cause can't be pinned down for
+  certain) — give the three most likely reasons as a short checklist, each
+  with how to check it:
+  1. Network access may not be enabled for code execution — this could be a
+     setting you or your workspace administrator control. Check
+     **Settings → Capabilities → "Code execution and file creation."**
+  2. Offer Center could be down right now. To check, paste
+     `https://offercenter.techsoup.org/resources/data/products.json` into a
+     browser — if it doesn't load there either, it's not your settings.
+  3. There may be a temporary network or firewall issue on your end — try
+     again in a few minutes.
 
 ## 2. Schema reference
 
