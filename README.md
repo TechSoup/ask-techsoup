@@ -52,7 +52,9 @@ Distributed as a Claude Code plugin via this repo's marketplace manifest.
 ```
 
 Requires read access to this repo on GitHub. After a new push, run
-`/plugin marketplace update` to pick up changes.
+`/plugin install ask-techsoup@ask-techsoup` again to pull the latest version
+— `/plugin marketplace update` alone only refreshes the marketplace listing,
+it doesn't update a plugin you've already installed.
 
 Use it with:
 
@@ -206,7 +208,9 @@ Action instead of running `curl`) — update it by hand to match whenever
 
 ## Updating
 
-- **Claude Code** users: run `/plugin marketplace update` after a push.
+- **Claude Code** users: run `/plugin install ask-techsoup@ask-techsoup`
+  after a push (`/plugin marketplace update` alone won't update an
+  already-installed plugin).
 - **Claude Desktop / claude.ai** users: re-download `SKILL.md` (Customize
   method) or re-zip and re-upload (fallback method), then remove the old
   version of the skill before adding the new one.
