@@ -4,12 +4,12 @@
     "name": "Marnie Webb",
     "email": "mwebb@techsoup.org"
   },
-  "description": "TechSoup-internal Claude Code skills, starting with ask-techsoup (queries the live nonprofit-technology offer catalog).",
+  "description": "TechSoup-internal Claude Code skills, starting with ask-techsoup (queries the live catalog of technology discounts and donations available to nonprofits worldwide).",
   "plugins": [
     {
       "name": "ask-techsoup",
       "source": "./plugins/ask-techsoup",
-      "description": "Answer questions about TechSoup's nonprofit-technology offers by querying the live product catalog at offercenter.techsoup.org."
+      "description": "Answer questions about technology discounts and donations available to nonprofits worldwide, vetted and maintained by TechSoup, by querying the live product catalog at offercenter.techsoup.org."
     }
   ]
 }

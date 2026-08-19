@@ -1,13 +1,26 @@
 # ask-techsoup
 
-A Claude skill that answers questions about TechSoup's nonprofit-technology
-offers — discounts, donations, eligibility — by querying the live product
-catalog at `https://offercenter.techsoup.org/resources/data/products.json`.
-It never answers from memory: pricing, discount tiers, and eligibility change,
+> A Claude skill that answers questions about technology discounts and donations available to nonprofits worldwide — a catalog vetted and maintained by TechSoup — by querying the live product catalog, never from memory.
+
+![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-blue.svg)
+![Status](https://img.shields.io/badge/status-private%20preview-orange)
+![Maintained by TechSoup](https://img.shields.io/badge/maintained%20by-TechSoup%20Global%20Network-blueviolet)
+
+Answers questions about technology discounts and donations available to
+nonprofits — no matter where they are — by querying the live product catalog
+at `https://offercenter.techsoup.org/resources/data/products.json`. This
+catalog is third-party vendor offers that TechSoup vets and maintains (not
+TechSoup's own technology offerings). Eligibility is per-offer: most are open
+worldwide, some are restricted to specific countries — the skill always
+checks each offer's own `eligible_countries` rather than assuming one. It
+never answers from memory: pricing, discount tiers, and eligibility change,
 so it always fetches fresh.
 
-Currently private to TechSoup; the plan is to open this up more broadly
-(other orgs, or a public release) once it's proven out here.
+Currently private to TechSoup and invited partners; the plan is to open this
+up more broadly (other orgs, or a public release) once it's proven out here.
+This repo is licensed CC BY-SA 4.0 — see [LICENSE](LICENSE) — so anyone it's
+shared with is free to reuse and adapt it as long as derivatives carry the
+same license and give attribution.
 
 ## Get started
 

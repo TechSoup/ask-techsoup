@@ -1,6 +1,6 @@
 {
   "name": "ask-techsoup",
-  "description": "Answer questions about TechSoup's nonprofit-technology offers by querying the live product catalog at offercenter.techsoup.org.",
+  "description": "Answer questions about technology discounts and donations available to nonprofits worldwide, vetted and maintained by TechSoup, by querying the live product catalog at offercenter.techsoup.org.",
   "author": {
     "name": "Marnie Webb",
     "email": "mwebb@techsoup.org"
