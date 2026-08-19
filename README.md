@@ -46,21 +46,54 @@ use Claude Desktop/claude.ai or ChatGPT.
 
 Distributed as a Claude Code plugin via this repo's marketplace manifest.
 
-```
-/plugin marketplace add TechSoup/ask-techsoup
-/plugin install ask-techsoup@ask-techsoup
-```
+**Requires:**
+- Read access to this repo on GitHub.
+- **Git installed and on PATH.** If `/plugin marketplace add` fails with
+  `Command 'git' not found`, git is either not installed or wasn't added to
+  PATH. On Windows, this happens if the Git for Windows installer's PATH
+  option was set to something other than the recommended one — re-run the
+  [Git for Windows installer](https://git-scm.com/download/win) and choose
+  **"Git from the command line and also from 3rd-party software"**, or add
+  `C:\Program Files\Git\cmd` to PATH yourself via Environment Variables —
+  then fully close and reopen your terminal (and Claude Code) before
+  retrying. (No git, or don't want to deal with it? See the fallback below.)
 
-Requires read access to this repo on GitHub. After a new push, run
-`/plugin install ask-techsoup@ask-techsoup` again to pull the latest version
-— `/plugin marketplace update` alone only refreshes the marketplace listing,
-it doesn't update a plugin you've already installed.
+Enter these **one command at a time** — type or paste only the first line,
+press Enter, wait for it to confirm, then do the second. Pasting both lines
+together can make some terminals merge them into a single invalid command:
+
+1. `/plugin marketplace add TechSoup/ask-techsoup`
+2. `/plugin install ask-techsoup@ask-techsoup`
+
+After a new push, run `/plugin install ask-techsoup@ask-techsoup` again to
+pull the latest version — `/plugin marketplace update` alone only refreshes
+the marketplace listing, it doesn't update a plugin you've already installed.
 
 Use it with:
 
 ```
 /ask-techsoup what security tools are discounted for nonprofits?
 ```
+
+### No git, or the plugin install is giving you trouble?
+
+Skip the marketplace entirely and add it as a plain skill file instead — no
+git, no GitHub clone, no plugin system involved:
+
+1. Download the skill file: open
+   [`claude-ai/ask-techsoup/SKILL.md`](claude-ai/ask-techsoup/SKILL.md) on
+   GitHub and click the **download icon** at the top right of the file view
+   (next to "Raw") to save `SKILL.md` — e.g. to your Downloads folder.
+2. In the same terminal where Claude Code is running, just ask Claude
+   directly to place it for you:
+   > Move the SKILL.md file from my Downloads folder to
+   > `~/.claude/skills/ask-techsoup/SKILL.md`, creating any folders that
+   > don't exist.
+
+   Claude Code has file access and will create the folder and move the file
+   for you — no manual navigation, no git required.
+3. Close and reopen Claude Code so it picks up the new skill.
+4. Use it the same way — ask a question, or `/ask-techsoup <question>`.
 
 Source: [`plugins/ask-techsoup/skills/ask-techsoup/SKILL.md`](plugins/ask-techsoup/skills/ask-techsoup/SKILL.md)
 
@@ -210,7 +243,9 @@ Action instead of running `curl`) — update it by hand to match whenever
 
 - **Claude Code** users: run `/plugin install ask-techsoup@ask-techsoup`
   after a push (`/plugin marketplace update` alone won't update an
-  already-installed plugin).
+  already-installed plugin). If you used the no-git fallback method instead,
+  re-download `SKILL.md` and ask Claude to replace the file at
+  `~/.claude/skills/ask-techsoup/SKILL.md`.
 - **Claude Desktop / claude.ai** users: re-download `SKILL.md` (Customize
   method) or re-zip and re-upload (fallback method), then remove the old
   version of the skill before adding the new one.
