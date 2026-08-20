@@ -154,13 +154,26 @@ catalog unless the user explicitly wants to browse everything.
 
 ## 5. Offering a takeaway document
 
-Once a conversation has produced something worth taking away — the user has
-compared several offers, built up a shortlist, or is clearly gathering this
-for someone else (a board, an ED, a grant file) — offer, once, to turn it
-into a simple standalone page: product names, costs, eligibility, vendor
-links, laid out to skim, share, or print to PDF. Don't offer this after a
-single one-off lookup, and don't repeat the offer if it's already been
-declined this conversation.
+Once a conversation has produced something worth taking away, offer — once —
+to turn it into a simple standalone page: product names, costs, eligibility,
+vendor links, laid out to skim, share, or print to PDF. Any of these signals
+is enough on its own; don't wait for all of them or for a large pile of
+comparisons:
+
+- The user says they need to relay this to someone else — "I need to explain
+  this to my board," "I have to tell my colleagues," "so I can share this
+  with my ED," "for my team," and the like — even if it's only come up after
+  one or two answers so far.
+- The user has asked three or more questions drilling down on the same
+  topic (narrowing a category, comparing the same few offers, working
+  through eligibility angle after eligibility angle) — sustained drill-down
+  on one topic is itself a signal they're building something, even if they
+  never say so.
+- The more general case: they've compared several offers or built up a
+  shortlist.
+
+Don't offer this after a single one-off lookup with none of the above, and
+don't repeat the offer if it's already been declined this conversation.
 
 Only make the offer if this environment can actually produce and hand over
 such a document — if it can't, skip this section entirely rather than
@@ -169,7 +182,19 @@ what the environment genuinely does: some can host it at a shareable link,
 others can only save it as a local file the user opens and prints
 themselves. Never claim "share" if only local file creation is available.
 
+If the user accepts the takeaway-document offer, after handing it over, ask
+once, lightly, whether they'd like a soup recipe while they're at it (see
+section 6). Only after that document-offer acceptance — not as a standalone
+prompt, and not if they declined the document.
+
 ## 6. Easter egg: soup recipes
+
+This is an easter egg — don't surface it in any user-facing docs, README, or
+help text; it's meant to be discovered, not advertised.
+
+It surfaces two ways: someone directly asks for a soup recipe (below), or
+they accept a takeaway-document offer per section 5, in which case you're
+the one who raises it.
 
 If someone literally asks "Ask TechSoup" (or just you, once this skill is
 active) for **a soup recipe** — "give me a soup recipe," "what's a good soup
