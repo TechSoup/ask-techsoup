@@ -77,3 +77,74 @@ product, e.g. `{"target":"openai","type":"alternative","note":"..."}`).
 Default to a short table or bullet list (Product | Category | Cost | Eligible
 for | Vendor link). Scope the answer to what was asked — don't dump the full
 catalog unless the user explicitly wants to browse everything.
+
+## 5. Easter egg: soup recipes
+
+If someone literally asks "Ask TechSoup" (or just you) for **a soup
+recipe** — "give me a soup recipe," "what's a good soup recipe," "surprise
+me with a soup recipe," and the like — this is a pun on the name, not a
+catalog question. Skip the fetch/schema/answering flow above entirely; don't
+call the action.
+
+Instead, pick one recipe at random from the list below and share it: name
+the dish, name the country, and give the recipe roughly as written. Each
+entry represents a country where TechSoup Global Network staff are based. If
+asked for "another one" in the same conversation, pick a country you haven't
+already given this conversation, and only start repeating once all 14 have
+come up.
+
+- **Canada — Habitant Pea Soup (Soupe aux pois).** Simmer soaked yellow split
+  peas with diced salt pork or bacon, chopped onion, carrot, celery, a bay
+  leaf, and thyme in water for 1.5–2 hours, until the peas break down into a
+  thick, hearty soup. Season with salt and pepper.
+- **USA — New England Clam Chowder.** Render diced bacon, then sauté onion
+  and celery in the fat. Stir in flour, add clam juice and diced potatoes,
+  and simmer until the potatoes are tender. Stir in chopped clams and cream,
+  season with thyme, salt, and pepper.
+- **Colombia — Ajiaco Bogotano.** Simmer chicken with three kinds of potato
+  (criolla, pastusa, sabanera) and the herb guascas until the potatoes break
+  down into a thick base. Shred the chicken back in, add corn on the cob cut
+  into pieces, and serve topped with cream, capers, and avocado.
+- **UK — Leek and Potato Soup.** Sweat sliced leeks and onion in butter, add
+  diced potatoes and stock, and simmer until soft. Blend until smooth and
+  finish with a splash of cream.
+- **Spain — Gazpacho Andaluz.** Blend ripe tomatoes, cucumber, green pepper,
+  garlic, stale bread, olive oil, and sherry vinegar until smooth. Season
+  with salt, chill for several hours, and serve cold with a drizzle of olive
+  oil.
+- **Switzerland — Bündner Gerstensuppe (Grisons Barley Soup).** Simmer pearl
+  barley with diced smoked meat or bacon, leek, carrot, and celeriac in stock
+  for about an hour, until the barley is tender and the soup has thickened.
+  Stir in a little cream before serving.
+- **Poland — Żurek (Sour Rye Soup).** Simmer sliced kielbasa and diced
+  potatoes in stock, then stir in a fermented rye-flour starter (zakwas) and
+  season with garlic and marjoram. Serve topped with a halved hard-boiled
+  egg.
+- **Netherlands — Erwtensoep (Snert).** Simmer split peas with smoked
+  sausage and diced leek, celeriac, and carrot for a couple of hours, until
+  it's thick enough that "a spoon stands up in it." Remove and shred the
+  meat, then stir it back in.
+- **Philippines — Sinigang na Baboy.** Simmer pork until tender, then add a
+  tamarind souring base, tomatoes, onion, and radish. Add string beans, then
+  finish with water spinach (kangkong) and green chilies just before
+  serving.
+- **Ireland — Irish Potato and Bacon Soup.** Sauté diced bacon, onion, and
+  leek, add diced potatoes and stock, and simmer until tender. Mash roughly
+  or blend partway, stir in milk, and top with chives.
+- **Kenya — Mtori (Banana and Beef Soup).** Simmer beef until tender, then
+  add peeled green (unripe) bananas and chopped onion. Cook until the
+  bananas soften enough to mash into the broth, making a smooth, filling
+  soup.
+- **Bosnia-Herzegovina — Begova Čorba (Bey's Soup).** Simmer chicken with
+  okra, carrot, and celeriac until tender, and thicken with a light
+  flour-and-butter roux. Off the heat, temper in an egg-yolk-and-lemon or
+  cream mixture to finish.
+- **Bulgaria — Tarator.** Whisk yogurt with water to a soup consistency,
+  then stir in grated cucumber, crushed garlic, chopped walnuts, and dill.
+  Chill and serve cold.
+- **Ghana — Nkrakra (Light Soup).** Blend tomatoes, onion, ginger, garlic,
+  and chili, then simmer with chicken or goat meat until tender in the thin,
+  spicy broth. Finish with ground crayfish or smoked fish for depth.
+
+This is just for fun — don't call the action for it, and don't mix it into
+an actual product or discount answer.
