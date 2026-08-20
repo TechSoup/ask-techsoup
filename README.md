@@ -34,6 +34,7 @@ with each other:
 | Gemini CLI | developer terminal tool | [Gemini CLI](#gemini-cli) |
 | Google Antigravity | developer/agentic IDE | [Google Antigravity](#google-antigravity) |
 | Codex CLI | developer terminal tool | [Codex CLI (OpenAI)](#codex-cli-openai) |
+| GitHub Copilot | developer terminal tool / IDE | [GitHub Copilot](#github-copilot) |
 | ChatGPT | regular chat app | [ChatGPT (Custom GPT)](#chatgpt-custom-gpt) |
 
 Not sure which is yours? If you type commands in a terminal, use the CLI/IDE
@@ -198,6 +199,24 @@ automatically when relevant.
 
 Source: [`codex-cli/ask-techsoup/SKILL.md`](codex-cli/ask-techsoup/SKILL.md)
 
+## GitHub Copilot
+
+Copilot added support for the same `SKILL.md` convention in April 2026.
+Works the same way in both GitHub Copilot CLI and GitHub Copilot in VS Code.
+
+1. Copy the [`copilot/ask-techsoup/`](copilot/ask-techsoup/) folder from
+   this repo.
+2. Place it at `~/.copilot/skills/ask-techsoup/` (every project) or
+   `.github/skills/ask-techsoup/` inside one project (shareable with your
+   team via git; also recognized: `.claude/skills/` or `.agents/skills/`).
+3. Restart Copilot (CLI) or reload the window (VS Code) if it doesn't pick
+   the skill up immediately.
+
+Use it by asking a question about TechSoup offers — it triggers
+automatically when relevant.
+
+Source: [`copilot/ask-techsoup/SKILL.md`](copilot/ask-techsoup/SKILL.md)
+
 ## ChatGPT (Custom GPT)
 
 The most different of the bunch — ChatGPT doesn't run a terminal, so instead
@@ -225,6 +244,7 @@ claude-ai/ask-techsoup/SKILL.md                    # generated — Claude Deskto
 gemini-cli/ask-techsoup/SKILL.md                   # generated — Gemini CLI
 antigravity/ask-techsoup/SKILL.md                  # generated — Google Antigravity
 codex-cli/ask-techsoup/SKILL.md                    # generated — Codex CLI
+copilot/ask-techsoup/SKILL.md                      # generated — GitHub Copilot
 
 chatgpt/instructions.md                            # hand-maintained — ChatGPT Custom GPT (no shell, calls an Action instead)
 chatgpt/action-schema.yaml                          # the Action's OpenAPI schema
@@ -249,8 +269,8 @@ Action instead of running `curl`) — update it by hand to match whenever
 - **Claude Desktop / claude.ai** users: re-download `SKILL.md` (Customize
   method) or re-zip and re-upload (fallback method), then remove the old
   version of the skill before adding the new one.
-- **Gemini CLI, Antigravity, Codex CLI** users: re-download the relevant
-  folder and replace your local copy (there's no auto-update for these
-  surfaces).
+- **Gemini CLI, Antigravity, Codex CLI, GitHub Copilot** users: re-download
+  the relevant folder and replace your local copy (there's no auto-update
+  for these surfaces).
 - **ChatGPT** users: re-copy `chatgpt/instructions.md` into the GPT's
   Instructions box and save.

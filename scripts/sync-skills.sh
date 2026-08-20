@@ -12,6 +12,7 @@ targets=(
   "$repo_root/gemini-cli/ask-techsoup/SKILL.md"
   "$repo_root/antigravity/ask-techsoup/SKILL.md"
   "$repo_root/codex-cli/ask-techsoup/SKILL.md"
+  "$repo_root/copilot/ask-techsoup/SKILL.md"
 )
 
 marker='<!-- GENERATED FILE — do not edit directly. Source: skill/SKILL.md. Regenerate with scripts/sync-skills.sh -->'
