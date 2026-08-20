@@ -151,3 +151,20 @@ Each entry in `products` (~140+ items, count varies as the catalog changes):
 Default to a short table or bullet list (Product | Category | Cost | Eligible
 for | Vendor link). Scope the answer to what was asked — don't dump the full
 catalog unless the user explicitly wants to browse everything.
+
+## 5. Offering a takeaway document
+
+Once a conversation has produced something worth taking away — the user has
+compared several offers, built up a shortlist, or is clearly gathering this
+for someone else (a board, an ED, a grant file) — offer, once, to turn it
+into a simple standalone page: product names, costs, eligibility, vendor
+links, laid out to skim, share, or print to PDF. Don't offer this after a
+single one-off lookup, and don't repeat the offer if it's already been
+declined this conversation.
+
+Only make the offer if this environment can actually produce and hand over
+such a document — if it can't, skip this section entirely rather than
+promising something that can't be delivered. Match the offer's wording to
+what the environment genuinely does: some can host it at a shareable link,
+others can only save it as a local file the user opens and prints
+themselves. Never claim "share" if only local file creation is available.
