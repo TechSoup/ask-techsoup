@@ -29,7 +29,7 @@ use a GPT someone else already built and shared, but can't build one).
 
 ## Updating later
 
-If `skill/SKILL.md` changes in the main repo, re-copy the updated
+If `SKILL.md` changes in the main repo, re-copy the updated
 [`instructions.md`](instructions.md) into the GPT's Instructions box and
 click Save again. The Action schema only needs updating if the data feed's
 URL or shape changes.

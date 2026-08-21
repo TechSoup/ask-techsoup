@@ -81,10 +81,9 @@ Use it with:
 Skip the marketplace entirely and add it as a plain skill file instead — no
 git, no GitHub clone, no plugin system involved:
 
-1. Download the skill file: open
-   [`claude-ai/ask-techsoup/SKILL.md`](claude-ai/ask-techsoup/SKILL.md) on
-   GitHub and click the **download icon** at the top right of the file view
-   (next to "Raw") to save `SKILL.md` — e.g. to your Downloads folder.
+1. Download the skill file: open [`SKILL.md`](SKILL.md) on GitHub and click
+   the **download icon** at the top right of the file view (next to "Raw")
+   to save `SKILL.md` — e.g. to your Downloads folder.
 2. In the same terminal where Claude Code is running, just ask Claude
    directly to place it for you:
    > Move the SKILL.md file from my Downloads folder to
@@ -96,7 +95,7 @@ git, no GitHub clone, no plugin system involved:
 3. Close and reopen Claude Code so it picks up the new skill.
 4. Use it the same way — ask a question, or `/ask-techsoup <question>`.
 
-Source: [`plugins/ask-techsoup/skills/ask-techsoup/SKILL.md`](plugins/ask-techsoup/skills/ask-techsoup/SKILL.md)
+Source: [`SKILL.md`](SKILL.md)
 
 ## Claude Desktop / claude.ai
 
@@ -113,12 +112,11 @@ Claude Desktop app you don't need to zip anything.
    your workspace admin controls it — ask them to enable network access for
    code execution. (If Claude ever replies that it can't reach the catalog,
    this is almost always the cause — see "If it doesn't work" below.)
-2. **Download the skill file:** open
-   [`claude-ai/ask-techsoup/SKILL.md`](claude-ai/ask-techsoup/SKILL.md) on
-   GitHub, then click the **download icon** at the top right of the file
-   view (next to "Raw") to save `SKILL.md` to your computer. Don't use
-   "Download ZIP" from the repo's main page — that downloads the whole repo,
-   which you don't need.
+2. **Download the skill file:** open [`SKILL.md`](SKILL.md) on GitHub, then
+   click the **download icon** at the top right of the file view (next to
+   "Raw") to save `SKILL.md` to your computer. Don't use "Download ZIP" from
+   the repo's main page — that downloads the whole repo, which you don't
+   need.
 3. In Claude Desktop, open the left sidebar → **Customize** → add a skill by
    uploading the `SKILL.md` file you just downloaded.
 4. Don't see "Customize" in your sidebar? Claude is still rolling this
@@ -126,22 +124,19 @@ Claude Desktop app you don't need to zip anything.
 
 ### Fallback: upload a zip file (claude.ai in a browser, or no "Customize" yet)
 
-1. Go to the [repo's main page](https://github.com/TechSoup/ask-techsoup),
-   click the green **`<> Code`** button → **Download ZIP**. This saves
-   `ask-techsoup-main.zip` to your Downloads folder.
-2. Unzip it:
-   - **Mac:** double-click `ask-techsoup-main.zip`.
-   - **Windows:** right-click it → **Extract All** → **Extract**.
-3. Open the extracted `ask-techsoup-main` folder → open `claude-ai` → find
-   the `ask-techsoup` folder. Select it, but don't open it.
-4. Compress just that folder:
+1. Download [`SKILL.md`](SKILL.md): open it on GitHub and click the
+   **download icon** at the top right of the file view (next to "Raw") to
+   save it to your computer.
+2. Create a new folder named exactly `ask-techsoup` and move the downloaded
+   `SKILL.md` into it, so you have `ask-techsoup/SKILL.md`.
+3. Compress that folder:
    - **Mac:** right-click `ask-techsoup` → **Compress "ask-techsoup"** →
      this creates `ask-techsoup.zip` next to it.
    - **Windows:** right-click `ask-techsoup` → **Send to** → **Compressed
      (zipped) folder** → this creates `ask-techsoup.zip` next to it.
-5. In Claude: **Settings → Features → Skills → + → Create skill** → upload
+4. In Claude: **Settings → Features → Skills → + → Create skill** → upload
    `ask-techsoup.zip`.
-6. Turn on network access as described in step 1 above.
+5. Turn on network access as described in step 1 above.
 
 ### Using it
 
@@ -152,61 +147,67 @@ triggers automatically when relevant.
 catalog, network access for code execution is almost certainly off — see
 step 1 above, or ask your workspace admin to enable it org-wide.
 
-Source: [`claude-ai/ask-techsoup/SKILL.md`](claude-ai/ask-techsoup/SKILL.md)
+Source: [`SKILL.md`](SKILL.md)
 
 ## Gemini CLI
 
 Uses the same Agent Skills folder convention as Claude Code.
 
-1. Copy the [`gemini-cli/ask-techsoup/`](gemini-cli/ask-techsoup/) folder
-   from this repo.
-2. Place it at `~/.gemini/skills/ask-techsoup/` (available in every project)
-   or `.gemini/skills/ask-techsoup/` inside one project (that project only).
+1. Download [`SKILL.md`](SKILL.md) from this repo (open it on GitHub, click
+   the **download icon** at the top right of the file view, next to "Raw").
+2. Create a folder named `ask-techsoup` and put `SKILL.md` inside it, then
+   place that folder at `~/.gemini/skills/ask-techsoup/` (available in every
+   project) or `.gemini/skills/ask-techsoup/` inside one project (that
+   project only).
 3. Restart Gemini CLI if it doesn't pick the skill up immediately.
 
 Use it by asking a question about TechSoup offers — it triggers
 automatically when relevant.
 
-Source: [`gemini-cli/ask-techsoup/SKILL.md`](gemini-cli/ask-techsoup/SKILL.md)
+Source: [`SKILL.md`](SKILL.md)
 
 ## Google Antigravity
 
 Also uses the Agent Skills folder convention.
 
-1. Copy the [`antigravity/ask-techsoup/`](antigravity/ask-techsoup/) folder
-   from this repo.
-2. Place it at `.agent/skills/ask-techsoup/` inside your project (shareable
-   with your team via git) or `~/.gemini/antigravity/skills/ask-techsoup/`
-   for every project on your machine.
+1. Download [`SKILL.md`](SKILL.md) from this repo (open it on GitHub, click
+   the **download icon** at the top right of the file view, next to "Raw").
+2. Create a folder named `ask-techsoup` and put `SKILL.md` inside it, then
+   place that folder at `.agent/skills/ask-techsoup/` inside your project
+   (shareable with your team via git) or
+   `~/.gemini/antigravity/skills/ask-techsoup/` for every project on your
+   machine.
 
 Use it by asking a question about TechSoup offers — it triggers
 automatically when relevant.
 
-Source: [`antigravity/ask-techsoup/SKILL.md`](antigravity/ask-techsoup/SKILL.md)
+Source: [`SKILL.md`](SKILL.md)
 
 ## Codex CLI (OpenAI)
 
 Codex CLI also supports the same SKILL.md convention.
 
-1. Copy the [`codex-cli/ask-techsoup/`](codex-cli/ask-techsoup/) folder from
-   this repo.
-2. Place it at `~/.codex/skills/ask-techsoup/` (every project) or
+1. Download [`SKILL.md`](SKILL.md) from this repo (open it on GitHub, click
+   the **download icon** at the top right of the file view, next to "Raw").
+2. Create a folder named `ask-techsoup` and put `SKILL.md` inside it, then
+   place that folder at `~/.codex/skills/ask-techsoup/` (every project) or
    `.agents/skills/ask-techsoup/` inside one project.
 3. Restart Codex CLI if it doesn't pick the skill up immediately.
 
 Use it by asking a question about TechSoup offers — it triggers
 automatically when relevant.
 
-Source: [`codex-cli/ask-techsoup/SKILL.md`](codex-cli/ask-techsoup/SKILL.md)
+Source: [`SKILL.md`](SKILL.md)
 
 ## GitHub Copilot
 
 Copilot added support for the same `SKILL.md` convention in April 2026.
 Works the same way in both GitHub Copilot CLI and GitHub Copilot in VS Code.
 
-1. Copy the [`copilot/ask-techsoup/`](copilot/ask-techsoup/) folder from
-   this repo.
-2. Place it at `~/.copilot/skills/ask-techsoup/` (every project) or
+1. Download [`SKILL.md`](SKILL.md) from this repo (open it on GitHub, click
+   the **download icon** at the top right of the file view, next to "Raw").
+2. Create a folder named `ask-techsoup` and put `SKILL.md` inside it, then
+   place that folder at `~/.copilot/skills/ask-techsoup/` (every project) or
    `.github/skills/ask-techsoup/` inside one project (shareable with your
    team via git; also recognized: `.claude/skills/` or `.agents/skills/`).
 3. Restart Copilot (CLI) or reload the window (VS Code) if it doesn't pick
@@ -215,7 +216,7 @@ Works the same way in both GitHub Copilot CLI and GitHub Copilot in VS Code.
 Use it by asking a question about TechSoup offers — it triggers
 automatically when relevant.
 
-Source: [`copilot/ask-techsoup/SKILL.md`](copilot/ask-techsoup/SKILL.md)
+Source: [`SKILL.md`](SKILL.md)
 
 ## ChatGPT (Custom GPT)
 
@@ -234,30 +235,30 @@ Source: [`chatgpt/instructions.md`](chatgpt/instructions.md) and
 ## Repo layout
 
 ```
-skill/SKILL.md                                     # single source of truth for the skill's logic
-scripts/sync-skills.sh                             # regenerates every SKILL.md below from skill/SKILL.md
+SKILL.md                                           # single source of truth for the skill's logic — every
+                                                    # surface except ChatGPT points straight at this file
+
+scripts/sync-skills.sh                             # regenerates the Claude Code plugin copy from SKILL.md
 
 .claude-plugin/marketplace.json                    # Claude Code marketplace manifest
 plugins/ask-techsoup/.claude-plugin/plugin.json    # Claude Code plugin manifest
-plugins/ask-techsoup/skills/ask-techsoup/SKILL.md  # generated — Claude Code
-claude-ai/ask-techsoup/SKILL.md                    # generated — Claude Desktop / claude.ai
-gemini-cli/ask-techsoup/SKILL.md                   # generated — Gemini CLI
-antigravity/ask-techsoup/SKILL.md                  # generated — Google Antigravity
-codex-cli/ask-techsoup/SKILL.md                    # generated — Codex CLI
-copilot/ask-techsoup/SKILL.md                      # generated — GitHub Copilot
+plugins/ask-techsoup/skills/ask-techsoup/SKILL.md  # generated — required by the Claude Code plugin system,
+                                                    # which needs the file at this exact path
 
 chatgpt/instructions.md                            # hand-maintained — ChatGPT Custom GPT (no shell, calls an Action instead)
 chatgpt/action-schema.yaml                          # the Action's OpenAPI schema
 chatgpt/README.md                                  # click-by-click GPT setup
 ```
 
-**To change what the skill does or how it answers:** edit `skill/SKILL.md`
-only, then run `./scripts/sync-skills.sh` and commit the regenerated files —
-don't hand-edit any file marked `# generated` above, your edit will be
-overwritten next sync. `chatgpt/instructions.md` can't be auto-generated
-(ChatGPT has no filesystem/bash access, so its "fetch the data" step calls an
-Action instead of running `curl`) — update it by hand to match whenever
-`skill/SKILL.md`'s schema or answering logic changes.
+**To change what the skill does or how it answers:** edit `SKILL.md` only,
+then run `./scripts/sync-skills.sh` and commit the regenerated
+`plugins/ask-techsoup/skills/ask-techsoup/SKILL.md` — don't hand-edit that
+file, your edit will be overwritten next sync. Every other tool's
+instructions in this README link straight to the root `SKILL.md`, so there's
+nothing else to regenerate. `chatgpt/instructions.md` can't be
+auto-generated (ChatGPT has no filesystem/bash access, so its "fetch the
+data" step calls an Action instead of running `curl`) — update it by hand to
+match whenever `SKILL.md`'s schema or answering logic changes.
 
 ## Updating
 
@@ -270,7 +271,7 @@ Action instead of running `curl`) — update it by hand to match whenever
   method) or re-zip and re-upload (fallback method), then remove the old
   version of the skill before adding the new one.
 - **Gemini CLI, Antigravity, Codex CLI, GitHub Copilot** users: re-download
-  the relevant folder and replace your local copy (there's no auto-update
-  for these surfaces).
+  `SKILL.md` and replace your local copy (there's no auto-update for these
+  surfaces).
 - **ChatGPT** users: re-copy `chatgpt/instructions.md` into the GPT's
   Instructions box and save.

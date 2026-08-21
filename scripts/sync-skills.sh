@@ -1,21 +1,18 @@
 #!/usr/bin/env bash
-# Regenerates every per-surface SKILL.md from skill/SKILL.md, the single
-# source of truth. Run this after editing skill/SKILL.md; commit the results.
+# Regenerates the Claude Code plugin's SKILL.md from the repo-root SKILL.md,
+# the single source of truth. Run this after editing SKILL.md; commit the
+# result. Every other surface (Claude Desktop, Gemini CLI, Antigravity, Codex
+# CLI, Copilot) points users at the root SKILL.md directly — no copy needed.
 set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-source_file="$repo_root/skill/SKILL.md"
+source_file="$repo_root/SKILL.md"
 
 targets=(
   "$repo_root/plugins/ask-techsoup/skills/ask-techsoup/SKILL.md"
-  "$repo_root/claude-ai/ask-techsoup/SKILL.md"
-  "$repo_root/gemini-cli/ask-techsoup/SKILL.md"
-  "$repo_root/antigravity/ask-techsoup/SKILL.md"
-  "$repo_root/codex-cli/ask-techsoup/SKILL.md"
-  "$repo_root/copilot/ask-techsoup/SKILL.md"
 )
 
-marker='<!-- GENERATED FILE — do not edit directly. Source: skill/SKILL.md. Regenerate with scripts/sync-skills.sh -->'
+marker='<!-- GENERATED FILE — do not edit directly. Source: SKILL.md. Regenerate with scripts/sync-skills.sh -->'
 
 for target in "${targets[@]}"; do
   mkdir -p "$(dirname "$target")"

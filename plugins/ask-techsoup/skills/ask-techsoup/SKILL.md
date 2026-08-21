@@ -13,7 +13,7 @@ description: >-
   change.
 ---
 
-<!-- GENERATED FILE — do not edit directly. Source: skill/SKILL.md. Regenerate with scripts/sync-skills.sh -->
+<!-- GENERATED FILE — do not edit directly. Source: SKILL.md. Regenerate with scripts/sync-skills.sh -->
 
 # Ask TechSoup
 
