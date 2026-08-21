@@ -36,10 +36,11 @@ with each other:
 | Codex CLI | developer terminal tool | [Codex CLI (OpenAI)](#codex-cli-openai) |
 | GitHub Copilot | developer terminal tool / IDE | [GitHub Copilot](#github-copilot) |
 | ChatGPT | regular chat app | [ChatGPT (Custom GPT)](#chatgpt-custom-gpt) |
+| Microsoft 365 Copilot (Word, Excel, SharePoint, OneDrive) | regular chat app, built into Office | [Microsoft 365 Copilot](#microsoft-365-copilot-untested) — **untested** |
 
 Not sure which is yours? If you type commands in a terminal, use the CLI/IDE
 row for your tool. If you just open a website or app and type in a chat box,
-use Claude Desktop/claude.ai or ChatGPT.
+use Claude Desktop/claude.ai, ChatGPT, or Microsoft 365 Copilot.
 
 ---
 
@@ -230,6 +231,27 @@ Full click-by-click steps: [`chatgpt/README.md`](chatgpt/README.md)
 Source: [`chatgpt/instructions.md`](chatgpt/instructions.md) and
 [`chatgpt/action-schema.yaml`](chatgpt/action-schema.yaml)
 
+## Microsoft 365 Copilot (untested)
+
+⚠️ **These steps haven't been run end-to-end against a real tenant yet.**
+They're written from Microsoft's documentation, not from a confirmed working
+setup — expect to troubleshoot. Update this section (and remove this
+warning) once someone's verified it works.
+
+A different product from GitHub Copilot, and from every other row in this
+table — it's the Copilot built into Word, Excel, SharePoint, and OneDrive.
+It doesn't read `SKILL.md`; it needs an agent built in **Microsoft Copilot
+Studio**, with instructions plus a tool that calls the live TechSoup feed —
+architecturally closer to the ChatGPT Custom GPT above than to the
+`SKILL.md` surfaces. Unlike the ChatGPT version, this isn't self-serve per
+employee: it requires a Copilot Studio maker license to build and a
+Microsoft 365 admin's sign-off to publish org-wide.
+
+Full click-by-click steps: [`m365-copilot/README.md`](m365-copilot/README.md)
+
+Source: [`m365-copilot/instructions.md`](m365-copilot/instructions.md) and
+[`m365-copilot/api-spec.yaml`](m365-copilot/api-spec.yaml)
+
 ---
 
 ## Repo layout
@@ -248,6 +270,10 @@ plugins/ask-techsoup/skills/ask-techsoup/SKILL.md  # generated — required by t
 chatgpt/instructions.md                            # hand-maintained — ChatGPT Custom GPT (no shell, calls an Action instead)
 chatgpt/action-schema.yaml                          # the Action's OpenAPI schema
 chatgpt/README.md                                  # click-by-click GPT setup
+
+m365-copilot/instructions.md                       # hand-maintained — Microsoft 365 Copilot (untested), calls a Tool instead
+m365-copilot/api-spec.yaml                          # the Tool's OpenAPI v2 (Swagger) schema
+m365-copilot/README.md                             # click-by-click Copilot Studio setup
 ```
 
 **To change what the skill does or how it answers:** edit `SKILL.md` only,
@@ -255,10 +281,11 @@ then run `./scripts/sync-skills.sh` and commit the regenerated
 `plugins/ask-techsoup/skills/ask-techsoup/SKILL.md` — don't hand-edit that
 file, your edit will be overwritten next sync. Every other tool's
 instructions in this README link straight to the root `SKILL.md`, so there's
-nothing else to regenerate. `chatgpt/instructions.md` can't be
-auto-generated (ChatGPT has no filesystem/bash access, so its "fetch the
-data" step calls an Action instead of running `curl`) — update it by hand to
-match whenever `SKILL.md`'s schema or answering logic changes.
+nothing else to regenerate. `chatgpt/instructions.md` and
+`m365-copilot/instructions.md` can't be auto-generated (neither ChatGPT nor
+Microsoft 365 Copilot has filesystem/bash access, so their "fetch the data"
+step calls an Action/Tool instead of running `curl`) — update both by hand
+to match whenever `SKILL.md`'s schema or answering logic changes.
 
 ## Updating
 
@@ -275,3 +302,6 @@ match whenever `SKILL.md`'s schema or answering logic changes.
   surfaces).
 - **ChatGPT** users: re-copy `chatgpt/instructions.md` into the GPT's
   Instructions box and save.
+- **Microsoft 365 Copilot** users: whoever maintains the agent in Copilot
+  Studio re-copies `m365-copilot/instructions.md` into its instructions box
+  and republishes.

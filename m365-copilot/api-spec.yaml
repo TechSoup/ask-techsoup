@@ -1,0 +1,25 @@
+swagger: "2.0"
+info:
+  title: TechSoup Offer Center Catalog
+  description: >-
+    Public, read-only feed of TechSoup's catalog of technology discounts and
+    donations available to nonprofits worldwide.
+  version: "1.0.0"
+host: offercenter.techsoup.org
+basePath: /
+schemes:
+  - https
+produces:
+  - application/json
+paths:
+  /resources/data/products.json:
+    get:
+      operationId: getTechSoupProductCatalog
+      summary: >-
+        Fetch the live TechSoup catalog of nonprofit technology discounts and
+        donations, including eligibility and audit dates.
+      responses:
+        "200":
+          description: The full product catalog as JSON.
+          schema:
+            type: object
