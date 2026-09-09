@@ -156,9 +156,13 @@ catalog unless the user explicitly wants to browse everything.
 
 Once a conversation has produced something worth taking away, offer — once —
 to turn it into a simple standalone page: product names, costs, eligibility,
-vendor links, laid out to skim, share, or print to PDF. Any of these signals
-is enough on its own; don't wait for all of them or for a large pile of
-comparisons:
+vendor links, laid out to skim, share, or print to PDF. If the offer is
+accepted, build the page from `references/takeaway-template.md` in this
+skill's own directory — read it at that point, not before; it has the exact
+layout, styling, and fill-in instructions (styled consistently with the live
+Offer Center, using Atkinson Hyperlegible Next). Don't design a page from
+scratch. Any of these signals is enough on its own to make the offer; don't
+wait for all of them or for a large pile of comparisons:
 
 - The user says they need to relay this to someone else — "I need to explain
   this to my board," "I have to tell my colleagues," "so I can share this
